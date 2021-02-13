@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="index.css"></link>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+	
+	<title>Document</title>
+</head>
+<div>
+	<div class="app">
+	<div id="app">
+		{{ message }}
+	 </div>
+	</div>
+
+	<div class="app-2">
+	 <div id="app-2">
+		<span v-bind:title="message">
+		  Наведи на меня курсор на пару секунд,
+		  чтобы увидеть динамически связанное значение title!
+		</span>
+	 </div>
+	</div>
+
+	<div class="app-3">
+	 <div id="app-3">
+		 <span v-if="seen"> Сейчас меня видно</span>
+	 </div>
+	</div>
+
+<div class="app-4">
+	 <div id="app-4">
+		<ol>
+			<li v-for="todo in todos">
+				{{todo.text}}
+			</li>
+		</ol>
+	</div>
+</div>
+
+	<div class="app-5">
+	<div id="app-5">
+		<p>{{ message }}</p>
+		<button v-on:click="reverseMessage">Перевернуть сообщение</button>
+	 </div>
+	</div>
+
+	<div class="app-6">
+	 <div id="app-6">
+		 <p>{{message}}</p>
+		 <input v-model="message">
+	 </div>
+	</div>
+	
+<div class="app-7">
+	 <div id="app-7">
+		
+		<ol>
+		  <!--
+			 Теперь мы можем передать каждому компоненту todo-item объект
+			 с информацией о задаче, который будет динамически меняться.
+			 Мы также определяем для каждого компонента "key",
+			 значение которого мы разберём далее в руководстве.
+		  -->
+		  <todo-item
+			 v-for="item in groceryList"
+			 v-bind:todo="item"
+			 v-bind:key="item.id"
+		  ></todo-item>
+		</ol>
+	 </div>
+</div>
+
+<div class="example-1">
+	<div id="example">
+		<p>Изначальное сообщение: «{{ message }}»</p>
+		<p>Сообщение задом наперёд: «{{ reversedMessage }}»</p>
+	</div>
+</div>
+
+	<div class="demo-id">
+	<div id="demo">{{ fullName }}</div>
+	</div>
+
+<div class="watch-example-1">
+	<div id="watch-example">
+		<p>
+			Задайте вопрос, на который можно ответить «да» или «нет»:
+			<input v-model="question">
+		</p>
+		<p>{{ answer }}</p>
+	</div>
+
+</div>
+
+
+
+
+
+<div class="app-9">
+	<div id="app-9">
+		<div class="region" v-bind:class="{active: isActive, bounded: isBounded}"></div>
+		<div class="region"></div>
+		<button v-on:click="isActive=!isActive">Toggle color</button>
+		<button v-on:click="isBounded=!isBounded">Toggle border</button>
+	</div>
+	<script src="https://unpkg.com/vue"></script>
+
+</div>
+
+
+
+
+<div class="app-10">
+<div id="app-10">
+	<p v-if="visible">Первый параграф</p>
+	<p v-else>Второй параграф</p>
+	<button v-on:click="visible=!visible">{{visible? 'Скрыть' : 'Показать'}}</button>
+	<template v-if="visible">
+		<h1>Заголовок 1</h1>
+		<p>Параграф 1</p>
+	</template>
+	<template v-else>
+		<h1>Заголовок 2</h1>
+		<p>Параграф 2</p>
+	</template>
+	<button v-on:click="visible=!visible">{{visible?'К параграфу 2':'К параграфу 1'}}</button>
+	<input type="number" v-model="number" />
+	<p v-if="number==1">Один</p>
+	<p v-else-if="number==2">Два</p>
+	<p v-else-if="number>2 && number<7">Несколько</p>
+	<p v-else>Много</p>
+
+</div>
+<ul id="example-1">
+	<li v-for="item in items" :key="item.message">
+		{{ item.message }}
+	</li>
+</ul>
+
+<ul id="example-2">
+	<li v-for="(item, index) in items">
+		{{ parentMessage }} - {{ index }} - {{ item.message }}
+	</li>
+</ul>
+
+<ul id="v-for-object" class="demo">
+	<li v-for="value in object">
+		{{ value }}
+	</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="index.js"></script>	
+</body>
+</html>
